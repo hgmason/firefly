@@ -11,9 +11,9 @@ height = window_size
 width = int(window_size*1.5)
 size = window_size//12 + 1
 gain = .001
-MOUSE_DOWN = 5
-MOUSE_UP = 6
-MOUSE_MOVE = 4
+MOUSE_DOWN = 1025
+MOUSE_UP = 1026
+MOUSE_MOVE = 1024
 SPACE = 32
 pressed = False
 
@@ -194,7 +194,7 @@ while True:
     for hex in hexes:
         hex.update(hexes)
     for event in pygame.event.get():
-        if event.type == 2:
+        if event.type == KEYDOWN:
             if event.key == SPACE:
                 for i in range(len(hexes)):
                     hexes[i].power = random.randint(0,int(hexes[i].tic*12000))
